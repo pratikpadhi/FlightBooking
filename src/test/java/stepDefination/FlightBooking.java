@@ -102,6 +102,7 @@ public class FlightBooking {
 				
 				//JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].click();", button);
+				Thread.sleep(3000);
 	}
 
 	@When("user enters ToCity (.*)")
