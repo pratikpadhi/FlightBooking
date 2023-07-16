@@ -107,6 +107,8 @@ public class FlightBooking {
 				//JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].click();", button);
 				Thread.sleep(3000);
+				Thread.sleep(10000);
+				driver.findElement(By.xpath("//button[text()='OKAY, GOT IT!']")).click();
 	}
 
 	@When("user enters ToCity (.*)")
@@ -129,7 +131,8 @@ public class FlightBooking {
 				
 				//JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].click();", button);
-				Thread.sleep(5000);
+				Thread.sleep(10000);
+				driver.findElement(By.xpath("//button[text()='OKAY, GOT IT!']")).click();
 	}
 
 
@@ -137,7 +140,7 @@ public class FlightBooking {
 	@When("^user select the fastest evening flight$")
 	public void user_select_the_fastest_evening_flight() throws Throwable {
 		Thread.sleep(7000);
-		driver.findElement(By.xpath("//span[text()='Duration']/parent::span")).click();
+	//	driver.findElement(By.xpath("//span[text()='Duration']/parent::span")).click();
 		Thread.sleep(3000);
 		List<WebElement> lst=driver.findElements(By.xpath("//div[@class='dept-time']"));
 		List<WebElement> lst1=driver.findElements(By.xpath("//span[@class='airways-name ']"));
