@@ -55,7 +55,8 @@ public class FlightBooking {
 	
 	@When("user enters source (.*)")
 	public void user_enters_source_Kolkata(String source) throws Throwable {
-	
+		driver.navigate().refresh();
+		Thread.sleep(10000);
 		driver.findElement(By.xpath("//input[@id='fromCity']")).sendKeys(source);
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@placeholder='From']")).clear();
@@ -83,6 +84,9 @@ public class FlightBooking {
 
 	@When("user enters destination (.*)")
 	public void user_enters_destination_Bangalore(String destination) throws Throwable {
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//input[@id='toCity']")).sendKeys("");
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys(destination);
 		Thread.sleep(3000);
 		List<WebElement> lst=driver.findElements(By.xpath("//ul[@role='listbox']/li"));
